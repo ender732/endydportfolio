@@ -185,7 +185,7 @@ const Index = () => {
             </p>
             <div className="flex gap-4 justify-center">
               <Button variant="hero" size="lg" asChild>
-                <a href="mailto:contact@example.com">Get In Touch</a>
+                <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>Get In Touch</a>
               </Button>
               <Link to="/projects">
                 <Button variant="outline" size="lg">

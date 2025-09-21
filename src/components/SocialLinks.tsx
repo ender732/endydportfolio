@@ -1,17 +1,20 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-
+import { Mail } from "lucide-react";
+import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
+// SiX from "react-icons/si" is the correct icon for X (formerly Twitter).
+// You can update the label in the socials array to "X" for clarity.
 interface SocialLinksProps {
   className?: string;
   variant?: "default" | "hero";
 }
 
-const SocialLinks = ({ className = "", variant = "default" }: SocialLinksProps) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ className = "", variant = "default" }) => {
   const socials = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:contact@example.com", label: "Email" },
+    { icon: SiGithub, href: `${import.meta.env.VITE_GITHUB_URL}`, label: "GitHub" },
+    { icon: SiLinkedin, href: `${import.meta.env.VITE_LINKEDIN_URL}`, label: "LinkedIn" },
+    { icon: SiX, href: `${import.meta.env.VITE_X_URL}`, label: "Twitter" },
+    { icon: Mail, href: `mailto:${import.meta.env.VITE_CONTACT_EMAIL}`, label: "Email" }
   ];
 
   return (
