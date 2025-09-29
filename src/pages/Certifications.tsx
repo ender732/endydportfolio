@@ -2,38 +2,49 @@ import CertificationCard from "@/components/CertificationCard";
 import { motion } from "framer-motion";
 
 const Certifications = () => {
-  // Sample certifications data - replace with your actual certifications
+  // Using your actual Credly badge URLs - the embedded badges will work
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "March 2024",
-      credentialId: "AWS-123456",
-      credentialUrl: "https://aws.amazon.com/verification",
-      image: "/api/placeholder/600/400",
+      title: "CompTIA Cybersecurity Analyst (CySA+)",
+      issuer: "CompTIA",
+      date: "August 2025",
+      credentialId: "COMP001022663449",
+      credentialUrl: "https://www.credly.com/badges/0a502340-9c5b-49ac-acb9-0536d3f89fd6/public_url",
+      // Fallback to a generic CompTIA badge or placeholder
+      image: "/api/placeholder/340/340",
+      isCredlyBadge: true,
+      embedCode: `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="0a502340-9c5b-49ac-acb9-0536d3f89fd6" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>`,
     },
     {
-      title: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "January 2024",
-      credentialId: "GCP-789012",
-      credentialUrl: "https://cloud.google.com/certification",
-      image: "/api/placeholder/600/400",
+      title: "Cyber Threat Management",
+      issuer: "Cisco", 
+      date: "June 2025",
+      credentialId: "7e59f5ab-5b9a-4fcf-8985-79fddafde497",
+      credentialUrl: "https://www.credly.com/badges/7e59f5ab-5b9a-4fcf-8985-79fddafde497/public_url",
+      image: "/api/placeholder/340/340",
+      isCredlyBadge: true,
+      embedCode: `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="7e59f5ab-5b9a-4fcf-8985-79fddafde497" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>`,
     },
     {
-      title: "Certified Kubernetes Administrator",
-      issuer: "CNCF",
-      date: "November 2023",
-      credentialId: "CKA-345678",
-      credentialUrl: "https://cncf.io/certification",
-      image: "/api/placeholder/600/400",
+      title: "Endpoint Security",
+      issuer: "Cisco",
+      date: "June 2025", 
+      credentialId: "256ba621-c3f9-453a-872c-74a9a1b24f1b",
+      credentialUrl: "https://www.credly.com/badges/256ba621-c3f9-453a-872c-74a9a1b24f1b/public_url",
+      // This one is working - keep it
+      image: "https://images.credly.com/size/340x340/images/0ca5f542-fb5e-4a22-9b7a-c1a1ce4c3db7/EndpointSecurity.png",
+      isCredlyBadge: true,
+      embedCode: `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="256ba621-c3f9-453a-872c-74a9a1b24f1b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>`,
     },
     {
-      title: "React Developer Certification",
-      issuer: "Meta",
-      date: "September 2023",
-      credentialUrl: "https://meta.com/certification",
-      image: "/api/placeholder/600/400",
+      title: "Linux Essentials Certificate", 
+      issuer: "Linux Professional Institute",
+      date: "March 2025",
+      credentialId: "9e603212-c8d4-47d2-9b52-844d88fbb6a6",
+      credentialUrl: "https://www.credly.com/badges/9e603212-c8d4-47d2-9b52-844d88fbb6a6/public_url",
+      image: "/api/placeholder/340/340",
+      isCredlyBadge: true,
+      embedCode: `<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="9e603212-c8d4-47d2-9b52-844d88fbb6a6" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>`,
     },
   ];
 
@@ -49,8 +60,8 @@ const Certifications = () => {
             Certifications
           </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Professional certifications demonstrating expertise in cloud
-            computing, development frameworks, and modern technologies.
+            Professional certifications demonstrating expertise in cybersecurity,
+            network security, endpoint protection, and Linux system administration.
           </p>
         </motion.div>
 
@@ -66,6 +77,28 @@ const Certifications = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Focus on the Interactive Embedded Badges - These WILL work */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16"
+        >
+          <h2 className="text-2xl font-bold text-center mb-8">Official Certification Badges</h2>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+            These are my official, verifiable certification badges from Credly. Click any badge to verify directly.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+            {certifications.map((cert) => (
+              <div
+                key={`embed-${cert.title}`}
+                className="certification-embed bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                dangerouslySetInnerHTML={{ __html: cert.embedCode }}
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );
