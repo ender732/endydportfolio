@@ -59,5 +59,21 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Environment Variables
+
+This project uses environment variables for configuration. Copy `.env.example` to `.env` and configure:
+
+### Resume Configuration
+- `VITE_ENABLE_RESUME_DOWNLOAD`: Set to 'true' to enable resume download
+- `VITE_RESUME_FILENAME`: Name of the resume file in the public folder
+- `VITE_RESUME_EXTERNAL_URL`: (Optional) External URL for hosting resume securely
+
+### Adding Your Resume
+1. **Simple Method**: Place your resume as `resume.pdf` in the `public/` folder
+2. **Secure Method**: Host on a secure service and set `VITE_RESUME_EXTERNAL_URL`
+
+### Deployment Note
+For Netlify deployment, set environment variables in your Netlify dashboard, not in `.env` file.
+
 
 

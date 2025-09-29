@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Rocket, Heart, Lightbulb } from "lucide-react";
+import { Target, Rocket, Heart, Lightbulb, Download } from "lucide-react";
 import SocialLinks from "@/components/SocialLinks";
+import { resumeConfig, getResumeUrl, isResumeAvailable } from "@/config/resumeConfig";
 
 const About = () => {
   const values = [
@@ -100,11 +101,21 @@ const About = () => {
             </p>
             <div className="flex justify-center gap-4 mb-6">
               <Button variant="hero" size="lg" asChild>
-                <a href={`mailto:${import.meta.env.CONTACT_EMAIL2}`}>Get In Touch</a>
+                <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`}>Get In Touch</a>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="/Resume.pdf" download>Download Resume</a>
-              </Button>
+              {isResumeAvailable() && (
+                <Button variant="outline" size="lg" asChild>
+                  <a 
+                    href={getResumeUrl()} 
+                    download={resumeConfig.downloadName}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Resume
+                  </a>
+                </Button>
+              )}
             </div>
             <SocialLinks className="justify-center" />
           </motion.div>
