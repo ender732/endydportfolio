@@ -2,30 +2,35 @@ import ProjectCard from "@/components/ProjectCard";
 import { motion } from "framer-motion";
 
 const Projects = () => {
-  // Sample projects data - replace with your actual projects
   const projects = [
     {
       title: "The Trust Anchor Micro-SaaS",
       description: "A single-purpose web tool that automates the generation of a visually appealing, shareable Proof of Review image, secured with a unique, verifiable link to instantly eliminate buyer skepticism.",
-      image: "/api/placeholder/600/400",
+      // ✅ Use a real screenshot or create a project folder
+      image: "/projects/trust-anchor-screenshot.png",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       liveUrl: "https://trustanchor.netlify.app",
-      githubUrl: "https://github.com/star-scribe-generator",
+      // ✅ Fixed GitHub URL - removed your username from the repo path
+      githubUrl: "https://github.com/ender732/star-scribe-generator",
     },
     {
       title: "EcoSense",
       description: "Gamified energy savings tracker with real-time coaching and task management tool with real-time updates",
-      image: "/api/placeholder/600/400",
+      // ✅ Use a real screenshot or fallback
+      image: "/projects/ecosense-screenshot.png",
       technologies: ["TypeScript", "Next.js", "PostgreSQL", "WebSockets"],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com/eco-win-flow",
+      // ✅ Fixed GitHub URL
+      githubUrl: "https://github.com/ender732/eco-win-flow",
     },
     {
       title: "AI Content Generator",
       description: "AI-powered content generation tool using OpenAI API",
-      image: "/api/placeholder/600/400",
+      // ✅ Use a real screenshot or fallback
+      image: "/projects/ai-content-screenshot.png",
       technologies: ["Python", "FastAPI", "React", "OpenAI"],
-      githubUrl: "https://github.com",
+      // ✅ Fixed GitHub URL - add your actual repo name
+      githubUrl: "https://github.com/ender732/ai-content-generator",
     },
   ];
 
