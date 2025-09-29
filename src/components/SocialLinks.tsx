@@ -2,20 +2,43 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import { SiGithub, SiLinkedin, SiX } from "react-icons/si";
-// SiX from "react-icons/si" is the correct icon for X (formerly Twitter).
-// You can update the label in the socials array to "X" for clarity.
+import { getSocialConfig } from "@/config/socialConfig";
+
 interface SocialLinksProps {
   className?: string;
   variant?: "default" | "hero";
 }
 
 const SocialLinks: React.FC<SocialLinksProps> = ({ className = "", variant = "default" }) => {
+  const config = getSocialConfig();
+  
+  // Don't render anything if social links are disabled
+  if (!config.enabled) {
+    return null;
+  }
+
   const socials = [
-    { icon: SiGithub, href: `${import.meta.env.VITE_GITHUB_URL}`, label: "GitHub" },
-    { icon: SiLinkedin, href: `${import.meta.env.VITE_LINKEDIN_URL}`, label: "LinkedIn" },
-    { icon: SiX, href: `${import.meta.env.VITE_X_URL}`, label: "Twitter" },
-    { icon: Mail, href: `mailto:${import.meta.env.VITE_CONTACT_EMAIL}`, label: "Email" }
-  ];
+    { 
+      icon: SiGithub, 
+      href: config.links.github, 
+      label: "GitHub"
+    },
+    { 
+      icon: SiLinkedin, 
+      href: config.links.linkedin, 
+      label: "LinkedIn"
+    },
+    { 
+      icon: SiX, 
+      href: config.links.twitter, 
+      label: "Twitter"
+    },
+    { 
+      icon: Mail, 
+      href: config.links.email ? `mailto:${config.links.email}` : null, 
+      label: "Email"
+    }
+  ].filter(social => social.href && social.href !== "#");
 
   return (
     <div className={`flex gap-3 ${className}`}>

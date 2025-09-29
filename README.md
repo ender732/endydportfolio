@@ -10,9 +10,8 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/973a3989-9983-4974-a490-572a6cd4dd45) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+
 
 **Use your preferred IDE**
 
@@ -60,17 +59,5 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/973a3989-9983-4974-a490-572a6cd4dd45) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-
-##netifly status badge 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d432c16f-176e-4606-8876-9741b79d34b3/deploy-status)](https://app.netlify.com/projects/endyd/deploys)
