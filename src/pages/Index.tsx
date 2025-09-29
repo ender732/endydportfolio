@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   const stats = [
-    { icon: Briefcase, value: "10+", label: "Projects Completed" },
-    { icon: Award, value: "8", label: "Certifications" },
-    { icon: Code2, value: "5+", label: "Years Experience" },
+    { icon: Briefcase, value: "6", label: "Projects Completed" },
+    { icon: Award, value: "10", label: "Certifications" },
+    { icon: Code2, value: "2+", label: "Years Experience" },
   ];
 
   return (
@@ -60,7 +60,7 @@ const Index = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Professionalism At Play
+              Professionalism at play
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
@@ -96,7 +96,7 @@ const Index = () => {
             className="max-w-4xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Services i provide
+              Services  Provided
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="hover:shadow-lg transition-all duration-300 bg-gradient-card">
