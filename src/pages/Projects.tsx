@@ -5,20 +5,20 @@ const Projects = () => {
   // Sample projects data - replace with your actual projects
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with payment integration and admin dashboard",
+      title: "The Trust Anchor Micro-SaaS",
+      description: "A single-purpose web tool that automates the generation of a visually appealing, shareable Proof of Review image, secured with a unique, verifiable link to instantly eliminate buyer skepticism.",
       image: "/api/placeholder/600/400",
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      liveUrl: "https://trustanchor.netlify.app",
+      githubUrl: "https://github.com/star-scribe-generator",
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates",
+      title: "EcoSense",
+      description: "Gamified energy savings tracker with real-time coaching and task management tool with real-time updates",
       image: "/api/placeholder/600/400",
       technologies: ["TypeScript", "Next.js", "PostgreSQL", "WebSockets"],
       liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/eco-win-flow",
     },
     {
       title: "AI Content Generator",
