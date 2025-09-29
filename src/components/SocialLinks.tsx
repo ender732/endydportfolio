@@ -12,6 +12,9 @@ interface SocialLinksProps {
 const SocialLinks: React.FC<SocialLinksProps> = ({ className = "", variant = "default" }) => {
   const config = getSocialConfig();
   
+  // Debug: Log the configuration (remove this in production)
+  console.log('Social config:', config);
+  
   // Don't render anything if social links are disabled
   if (!config.enabled) {
     return null;
