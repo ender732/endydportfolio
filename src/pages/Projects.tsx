@@ -66,6 +66,6 @@ const Projects = () => {
       </div>
     </div>
   );
-};
+};npm run devicePixelRatio
 
 export default Projects;
