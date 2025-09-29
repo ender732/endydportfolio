@@ -10,9 +10,8 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/973a3989-9983-4974-a490-572a6cd4dd45) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+
 
 **Use your preferred IDE**
 
@@ -60,17 +59,21 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Environment Variables
 
-Simply open [Lovable](https://lovable.dev/projects/973a3989-9983-4974-a490-572a6cd4dd45) and click on Share -> Publish.
+This project uses environment variables for configuration. Copy `.env.example` to `.env` and configure:
 
-## Can I connect a custom domain to my Lovable project?
+### Resume Configuration
+- `VITE_ENABLE_RESUME_DOWNLOAD`: Set to 'true' to enable resume download
+- `VITE_RESUME_FILENAME`: Name of the resume file in the public folder
+- `VITE_RESUME_EXTERNAL_URL`: (Optional) External URL for hosting resume securely
 
-Yes, you can!
+### Adding Your Resume
+1. **Simple Method**: Place your resume as `resume.pdf` in the `public/` folder
+2. **Secure Method**: Host on a secure service and set `VITE_RESUME_EXTERNAL_URL`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Deployment Note
+For Netlify deployment, set environment variables in your Netlify dashboard, not in `.env` file.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
 
-##netifly status badge 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d432c16f-176e-4606-8876-9741b79d34b3/deploy-status)](https://app.netlify.com/projects/endyd/deploys)
+
